@@ -242,7 +242,7 @@ header .overlay {
 
 .boatVideo {
     width: 200%;
-
+    max-height: 100vh;
 }
 
 
