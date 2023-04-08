@@ -17,11 +17,11 @@
   </head>
 
   <body>
-    <audio id="myAudio" src="./music/3a. Music for Night Beings.mp3" autoplay loop></audio>
+    
 
     <a class="return" href="./home.html#menu"><img class="w-100" src="./images/Return Button.png" alt="" /></a>
-    <button id="soundOFF" onclick="soundOFF()" class="border-0 bg-transparent sound d-block"><img class="w-100" src="./images/Sound Button.png" alt="" /></button>
-    <button id="soundON" onclick="soundON()" class="border-0 bg-transparent sound d-none"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
+    <button id="soundOFFButton" onclick="turnOn()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound Button.png " alt="" /></button>
+    <button id="soundONButton" onclick="turnOff()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
 
     <section class="nightBeings position-relative">
       <div class="container-fluid">
@@ -80,8 +80,54 @@
     </section>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="./js/sound.js"></script>
-    <script src="./js/swiper.js"></script>
+    <script>
+      let beat;
+      let beatUrl = "./music/3a. Music for Night Beings.mp3";
+    </script>
+    <script src="./sound.js"></script>
+    <script>
+      var swiper = new Swiper(".mySwiper", {
+        draggable: true,
+        slidesPerView: 1.25,
+        initialSlide: 1,
+        loop: true,
+        autoplay: {
+          delay: 1000,
+          disableOnInteraction: false,
+        },
+        breakpoints: {
+          // when window width is >= 320px
+          320: {
+            initialSlide: 0,
+            slidesPerView: 1.5,
+            spaceBetween: 20,
+          },
+          // when window width is >= 480px
+          480: {
+            initialSlide: 0,
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          // when window width is >= 640px
+          640: {
+            initialSlide: 0,
+            slidesPerView: 2.5,
+            spaceBetween: 20,
+          },
+          1200: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1400: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+        },
+        centeredSlides: true,
+        spaceBetween: 20,
+        grabCursor: true,
+      });
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
       integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"

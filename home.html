@@ -17,9 +17,8 @@
   </head>
 
   <body>
-    <audio id="myAudio" src="./music/2a. Music for Menu Page.mp3" autoplay loop></audio>
-    <button id="soundOFF" onclick="soundOFF()" class="border-0 bg-transparent sound d-block"><img class="w-100" src="./images/Sound Button.png" alt="" /></button>
-    <button id="soundON" onclick="soundON()" class="border-0 bg-transparent sound d-none"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
+    <button id="soundOFFButton" onclick="turnOn()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound Button.png " alt="" /></button>
+    <button id="soundONButton" onclick="turnOff()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
 
     <section id="home" class="menuPage">
       <div class="menuVideo position-relative">
@@ -95,6 +94,10 @@
       </div>
     </section>
 
-    <script src="./js/sound.js"></script>
+    <script>
+      let beat;
+      let beatUrl = "./music/2a. Music for Menu Page.mp3";
+    </script>
+    <script src="./sound.js"></script>
   </body>
 </html>

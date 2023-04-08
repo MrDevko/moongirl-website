@@ -17,10 +17,10 @@
   </head>
 
   <body>
-    <audio id="myAudio" src="./music/5b. Music for Moongirl_s Favorite things.mp3" autoplay loop></audio>
+   
     <a class="return" href="./home.html#menu"><img class="w-100" src="./images/Return Button.png" alt="" /></a>
-    <button id="soundOFF" onclick="soundOFF()" class="border-0 bg-transparent sound d-block"><img class="w-100" src="./images/Sound Button.png" alt="" /></button>
-    <button id="soundON" onclick="soundON()" class="border-0 bg-transparent sound d-none"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
+    <button id="soundOFFButton" onclick="turnOn()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound Button.png " alt="" /></button>
+    <button id="soundONButton" onclick="turnOff()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
     <section class="moongirlFavThings">
       <div class="container-fluid">
         <div class="row justify-content-center">
@@ -48,6 +48,10 @@
       </div>
     </section>
 
-    <script src="./js/sound.js"></script>
+    <script>
+      let beat;
+      let beatUrl = "./music/5b. Music for Moongirl_s Favorite things.mp3";
+    </script>
+    <script src="./sound.js"></script>
   </body>
 </html>
