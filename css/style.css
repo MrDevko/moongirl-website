@@ -82,7 +82,7 @@
 
 .menuList2 {
     background: url(../images/1.\ Menu\ BG\ Rip\ wall\ texture.png);
-    background-size: auto;
+    background-size: cover;
     padding-top: 210px;
     padding-bottom: 100px;
 }
