@@ -348,7 +348,7 @@ header .overlay {
         top: 5%;
         left: 3%;
         z-index: 10000000000;
-        width: 80px;
+        width: 100px;
     }
 
     .sound {
@@ -356,8 +356,9 @@ header .overlay {
         bottom: 5%;
         right: 3%;
         z-index: 10000000000;
-        width:90px;
+        width: 110px;
     }
+
     .button3 {
         bottom: 5vh;
         right: 3%;
@@ -431,7 +432,7 @@ header .overlay {
         top: 5%;
         left: 3%;
         z-index: 10000000000;
-        width: 60px;
+        width: 85px;
     }
 
     .sound {
@@ -439,8 +440,9 @@ header .overlay {
         bottom: 5%;
         right: 3%;
         z-index: 10000000000;
-        width: 70px;
+        width: 100px;
     }
+
     .button3 {
         bottom: 90vh;
     }
@@ -480,7 +482,7 @@ header .overlay {
         top: 5%;
         left: 3%;
         z-index: 10000000000;
-        width: 40px;
+        width: 65px;
     }
 
     .sound {
@@ -488,8 +490,9 @@ header .overlay {
         bottom: 5%;
         right: 3%;
         z-index: 10000000000;
-        width: 50px;
+        width: 75px;
     }
+
     .button3 {
         top: 30px;
         width: 80px;
