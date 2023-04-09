@@ -30,6 +30,7 @@ function checkSound() {
         "click",
         () => {
           beat.play();
+          soundisOn()
         },
         { once: true }
       );
