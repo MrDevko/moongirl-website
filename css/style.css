@@ -258,6 +258,9 @@ header .overlay {
 
 
 
+.sochial {
+    width: 100px;
+}
 
 
 
@@ -366,7 +369,7 @@ header .overlay {
 
     .sochialDiv {
         position: absolute;
-        bottom: 3%;
+        top: 3%;
         left: 3%;
     }
 
@@ -392,7 +395,14 @@ header .overlay {
 
     }
 }
+@media only screen and (min-width: 1200px) {
+    .sochial {
+        width: 80px;
+    }
 
+   
+  
+}
 @media only screen and (max-width: 1200px) {
     .button3 {
         bottom: 7vh;
@@ -402,7 +412,7 @@ header .overlay {
 
     .sochialDiv {
         position: absolute;
-        bottom: 3%;
+        top: 3%;
         left: 3%;
     }
 
