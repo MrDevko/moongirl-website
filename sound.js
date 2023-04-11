@@ -27,7 +27,7 @@ function checkSound() {
     beat = new Audio(beatUrl);
     beat.play().catch((e) => {
 
-      window.addEventListener(
+      clickEvent = window.addEventListener(
         "click",
         () => {
           beat.play();
