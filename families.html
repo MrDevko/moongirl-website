@@ -16,18 +16,29 @@
     <title>Moon Girl</title>
   </head>
 
-  <body>
+  <body data-bs-spy="scroll" data-bs-target=".navbar" data-bs-offset="50">
     <a class="return" href="./home.html#menu"><img class="w-100" src="./images/Return Button.png" alt="" /></a>
     <button id="soundOFFButton" onclick="turnOn()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound Button.png " alt="" /></button>
     <button id="soundONButton" onclick="turnOff()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
-    <section class="family1">
+
+    <nav class="navbar d-none">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" id="sound1" href="#family1">Sound 1</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="sound2" href="#family2">Sound 2</a>
+        </li>
+      </ul>
+    </nav>
+    <section class="family1" id="family1">
       <div class="w-100 d-block m-auto">
         <img class="w-100 d-block m-auto" src="./images/Good Night Family.png" alt="" />
       </div>
       <img class="seams w-100" src="./images/Seams.png" alt="" />
     </section>
 
-    <section class="family2">
+    <section class="family2" id="family2">
       <div class="w-100 d-block m-auto">
         <img class="w-100 d-block m-auto" src="./images/Bad Night Family.png" alt="" />
       </div>
@@ -35,10 +46,79 @@
         <img class="w-100 d-block m-auto" src="./images/Family Tree.png" alt="" />
       </div>
     </section>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
 
     <script>
       let beat;
       let beatUrl = "./music/4a.Music for Moongirl_s Family.mp3";
+      let clickEvent;
+
+      window.addEventListener("activate.bs.scrollspy", function () {
+        if (document.getElementById("sound1").classList.contains("active") == true) {
+          beatUrl = "./music/4a.Music for Moongirl_s Family.mp3";
+          if (localStorage.getItem("muted").toString() == "true") {
+          } else {
+            if (clickEvent !== undefined) {
+              let clickEvent = new Event("click");
+              window.dispatchEvent(clickEvent);
+              window.addEventListener(
+                "click",
+                () => {
+                  beat = new Audio(beatUrl);
+                  beat.play();
+                  beat.addEventListener(
+                    "ended",
+                    function () {
+                      this.currentTime = 0;
+                      this.play();
+                    },
+                    false
+                  );
+                  soundisOn();
+                },
+                { once: true }
+              );
+            } else {
+              turnOff();
+              turnOn();
+            }
+          }
+        }
+        if (document.getElementById("sound2").classList.contains("active") == true) {
+          beatUrl = "./music/4b. Music for Thunder_s Family.mp3";
+          if (localStorage.getItem("muted").toString() == "true") {
+          } else {
+            if (clickEvent !== undefined) {
+              let clickEvent = new Event("click");
+              window.dispatchEvent(clickEvent);
+              window.addEventListener(
+                "click",
+                () => {
+                  beat = new Audio(beatUrl);
+                  beat.play();
+                  beat.addEventListener(
+                    "ended",
+                    function () {
+                      this.currentTime = 0;
+                      this.play();
+                    },
+                    false
+                  );
+                  soundisOn();
+                },
+                { once: true }
+              );
+            } else {
+              turnOff();
+              turnOn();
+            }
+          }
+        }
+      });
     </script>
     <script src="./sound.js"></script>
   </body>

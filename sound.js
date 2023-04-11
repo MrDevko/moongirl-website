@@ -26,15 +26,24 @@ function checkSound() {
 
     beat = new Audio(beatUrl);
     beat.play().catch((e) => {
+
       window.addEventListener(
         "click",
         () => {
           beat.play();
+          beat.addEventListener('ended', function() {
+            this.currentTime = 0;
+            this.play();
+        }, false);
           soundisOn()
         },
         { once: true }
       );
     });
+    beat.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+  }, false);
   }
 }
 
@@ -51,6 +60,10 @@ function turnOn() {
   try {
     beat = new Audio(beatUrl);
     beat.play();
+    beat.addEventListener('ended', function() {
+      this.currentTime = 0;
+      this.play();
+  }, false);
   } catch (error) {
   }
   localStorage.setItem("muted", false);
