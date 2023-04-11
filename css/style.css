@@ -225,7 +225,6 @@ header video {
 
 header .container {
     transform: translate(-50%, -50%);
-    top: 50%;
     left: 50%;
     z-index: 2;
 }
@@ -243,6 +242,15 @@ header .overlay {
 .boatVideo {
     width: 200%;
     max-height: 100vh;
+
+}
+
+.boatSec{
+    position: absolute;
+    /* transform: translateY(-50%); */
+    top: 50%;
+    width: 100%;
+    animation: float 6s ease-in-out infinite;
 }
 
 
@@ -306,6 +314,12 @@ header .overlay {
 
     }
 
+    .menuBtn{
+        right: 3%;
+        top: 3%;
+        width: 250px;
+    }
+
 }
 
 @media only screen and (min-width: 1500px) {
@@ -342,6 +356,12 @@ header .overlay {
         transform: translate(0%, -87%);
         width: 200px;
 
+    }
+
+    .menuBtn{
+        right: 3%;
+        top: 3%;
+        width: 250px;
     }
 }
 
@@ -393,6 +413,12 @@ header .overlay {
         transform: translate(0%, -87%);
         width: 200px;
 
+    }
+
+    .menuBtn{
+        right: 3%;
+        top: 3%;
+        width: 250px;
     }
 }
 @media only screen and (min-width: 1200px) {
@@ -484,6 +510,12 @@ header .overlay {
         width: 130px;
 
     }
+
+    .menuBtn{
+        right: 5%;
+        top: 5%;
+        width: 200px;
+    }
 }
 
 @media only screen and (max-width: 576px) {
@@ -534,5 +566,11 @@ header .overlay {
         transform: translate(0%, -87%);
         width: 100px;
 
+    }
+
+    .menuBtn{
+        right: 5%;
+        top: 5%;
+        width: 150px;
     }
 }
