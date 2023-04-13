@@ -22,15 +22,34 @@
       </div>
 
       <div class="text-center pt-5">
-        <video style="max-height: 45vh; cursor: pointer; max-width: 100%" href="./menu/" onended="window.location.href = './home.html'" onclick="this.muted = false;this.play();" playsinline muted>
-          <source src="./images/2.webm" type="video/webm" />
-          <source src="./images/2.mov" type="video/mov
-          " /></video
+        <video
+        id="player"
+          style="max-height: 45vh; cursor: pointer; max-width: 100%"
+          src="./images/2.webm"
+          type="video/webm"
+          href="./menu/"
+          onended="window.location.href = './home.html'"
+          onclick="this.muted = false;this.play();"
+          playsinline
+          muted
+        >
+        </video
         ><br />
         <a class="bg-transparent border-0 button1"><img style="max-height: 35vh" src="./images/Press to Enter.png" alt="" /></a>
       </div>
     </section>
   </body>
 
-  <script></script>
+  <script>
+    function supportsHEVCAlpha() {
+      const navigator = window.navigator;
+      const ua = navigator.userAgent.toLowerCase();
+      const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo);
+      const isSafari = ua.indexOf("safari") != -1 && !(ua.indexOf("chrome") != -1) && ua.indexOf("version/") != -1;
+      return isSafari && hasMediaCapabilities;
+    }
+    console.log(supportsHEVCAlpha())
+    const player = document.getElementById("player");
+    player.src = supportsHEVCAlpha() ? "./images/2.mov" : "./images/2.webm";
+  </script>
 </html>
