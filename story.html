@@ -17,7 +17,6 @@
   </head>
 
   <body>
-   
     <a class="return" href="./home.html#menu"><img class="w-100" src="./images/Return Button.png" alt="" /></a>
     <button id="soundOFFButton" onclick="turnOn()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound Button.png " alt="" /></button>
     <button id="soundONButton" onclick="turnOff()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
@@ -30,7 +29,7 @@
       <div class="boatSec">
         <div class="container position-absolute">
           <div class="w-100 mt-5">
-            <video class="boatVideo" src="./images/3.webm" id="player" autoplay loop muted></video>
+            <video class="boatVideo" src="./images/3.webm" id="player" autoplay loop muted playsinline></video>
           </div>
         </div>
       </div>
@@ -83,7 +82,7 @@
         const isSafari = ua.indexOf("safari") != -1 && !(ua.indexOf("chrome") != -1) && ua.indexOf("version/") != -1;
         return isSafari && hasMediaCapabilities;
       }
-      console.log(supportsHEVCAlpha())
+      console.log(supportsHEVCAlpha());
       const player = document.getElementById("player");
       player.src = supportsHEVCAlpha() ? "./images/3.mov" : "./images/3.webm";
     </script>
