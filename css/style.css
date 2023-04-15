@@ -245,7 +245,7 @@ header .overlay {
 
 }
 
-.boatSec{
+.boatSec {
     position: absolute;
     /* transform: translateY(-50%); */
     top: 50%;
@@ -314,7 +314,7 @@ header .overlay {
 
     }
 
-    .menuBtn{
+    .menuBtn {
         right: 3%;
         top: 3%;
         width: 250px;
@@ -358,7 +358,7 @@ header .overlay {
 
     }
 
-    .menuBtn{
+    .menuBtn {
         right: 3%;
         top: 3%;
         width: 250px;
@@ -415,20 +415,22 @@ header .overlay {
 
     }
 
-    .menuBtn{
+    .menuBtn {
         right: 3%;
         top: 3%;
         width: 250px;
     }
 }
+
 @media only screen and (min-width: 1200px) {
     .sochial {
         width: 80px;
     }
 
-   
-  
+
+
 }
+
 @media only screen and (max-width: 1200px) {
     .button3 {
         bottom: 7vh;
@@ -512,7 +514,7 @@ header .overlay {
 
     }
 
-    .menuBtn{
+    .menuBtn {
         right: 5%;
         top: 5%;
         width: 200px;
@@ -569,7 +571,7 @@ header .overlay {
 
     }
 
-    .menuBtn{
+    .menuBtn {
         right: 5%;
         top: 5%;
         width: 150px;
@@ -580,22 +582,22 @@ header .overlay {
 /* But it does not work with newer browsers, the below doesn't hide the play button parent div */
 
 *::-webkit-media-controls-panel {
-    display: none!important;
+    display: none !important;
     -webkit-appearance: none;
-  }
-  
-  /* Old shadow dom for play button */
-  
-  *::-webkit-media-controls-play-button {
-    display: none!important;
+}
+
+/* Old shadow dom for play button */
+
+*::-webkit-media-controls-play-button {
+    display: none !important;
     -webkit-appearance: none;
-  }
-  
-  /* New shadow dom for play button */
-  
-  /* This one works! */
-  
-  *::-webkit-media-controls-start-playback-button {
-    display: none!important;
+}
+
+/* New shadow dom for play button */
+
+/* This one works! */
+
+*::-webkit-media-controls-start-playback-button {
+    display: none !important;
     -webkit-appearance: none;
-  }
+}

@@ -5,6 +5,7 @@ function soundisOff() {
     document.getElementById("soundOFFButton").classList.add("d-block");
     document.getElementById("soundOFFButton").classList.remove("d-none");
   } catch (error) {
+    console.log("soundisOff function",error)
   }
 }
 
@@ -15,23 +16,28 @@ function soundisOn() {
     document.getElementById("soundONButton").classList.add("d-block");
     document.getElementById("soundONButton").classList.remove("d-none");
   } catch (error) {
+    console.log("soundisOn function",error)
   }
 }
 
 function checkSound() {
   if (localStorage.getItem("muted").toString() == "true") {
+    console.log("SOUND IS MUTED !!")
     soundisOff();
   } else {
+
     soundisOn();
 
     beat = new Audio(beatUrl);
     beat.play().catch((e) => {
-
+      console.log("INTERACTION REQUIRED")
       clickEvent = window.addEventListener(
         "click",
         () => {
+          console.log("USER INTERACTED AND SOUND SHOULD PLAY")
           beat.play();
           beat.addEventListener('ended', function() {
+            console.log("LOOP HAPPENED")
             this.currentTime = 0;
             this.play();
         }, false);
@@ -41,6 +47,7 @@ function checkSound() {
       );
     });
     beat.addEventListener('ended', function() {
+      console.log("LOOP HAPPENED")
       this.currentTime = 0;
       this.play();
   }, false);

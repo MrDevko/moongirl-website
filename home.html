@@ -122,12 +122,17 @@
         </a>
       </div>
     </section>
-
+    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
+    <script>
+      // VConsole will be exported to `window.VConsole` by default.
+      var vConsole = new window.VConsole();
+    </script>
     <script>
       let beat;
       let beatUrl = "./music/2a. Music for Menu Page.mp3";
     </script>
     <script src="./sound.js"></script>
+
     <script>
       function supportsHEVCAlpha() {
         const navigator = window.navigator;
@@ -136,9 +141,10 @@
         const isSafari = ua.indexOf("safari") != -1 && !(ua.indexOf("chrome") != -1) && ua.indexOf("version/") != -1;
         return isSafari && hasMediaCapabilities;
       }
-      console.log(supportsHEVCAlpha())
+      console.log("HEVC supported : ", supportsHEVCAlpha());
       const player = document.getElementById("player");
       player.src = supportsHEVCAlpha() ? "./images/1.mov" : "./images/1.webm";
+      console.log("Player source : ", player.src);
     </script>
   </body>
 </html>
