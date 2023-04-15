@@ -61,11 +61,11 @@
       let beat;
       let beatUrl = "./music/4a.Music for Moongirl_s Family.mp3";
       let clickEvent;
-
+      let muted = false;
       window.addEventListener("activate.bs.scrollspy", function () {
         if (document.getElementById("sound1").classList.contains("active") == true) {
           beatUrl = "./music/4a.Music for Moongirl_s Family.mp3";
-          if (localStorage.getItem("muted").toString() == "true") {
+          if (muted == true) {
           } else {
             if (clickEvent !== undefined) {
               let clickEvent = new Event("click");
@@ -95,7 +95,7 @@
         }
         if (document.getElementById("sound2").classList.contains("active") == true) {
           beatUrl = "./music/4b. Music for Thunder_s Family.mp3";
-          if (localStorage.getItem("muted").toString() == "true") {
+          if (muted) {
           } else {
             if (clickEvent !== undefined) {
               let clickEvent = new Event("click");
