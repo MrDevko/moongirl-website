@@ -22,12 +22,15 @@
 
     <section id="home" class="menuPage">
       <div class="menuVideo position-relative">
-        <a href="#menu" class="position-absolute menuBtn"> <img class="w-100" src="./images/Menu New with Press.png" alt=""></a>
+        <a href="#menu" class="position-absolute menuBtn"> <img class="w-100" src="./images/Menu New with Press.png" alt="" /></a>
         <img class="seams position-absolute w-100" src="./images/Seams.png" alt="" />
         <div class="row justify-content-center">
           <div style="overflow-x: hidden" class="vidDiv col-12 col-md-7 col-xxl-5">
             <div class="vid position-relative">
-              <video style="width: 150%; transform: translateX(-16%)" class="" src="./images/1.webm"id="player" muted loop autoplay playsinline> </video>
+              <video style="width: 150%; transform: translateX(-16%)" id="player" muted loop autoplay playsinline>
+                <source src="./images/1.webm" type="video/webm;" codecs="vp8, vorbis" />
+                <source src="./images/1.mov" type="video/mp4;" codecs="hvc1" />
+              </video>
               <a class="bg-transparent border-0 button2 position-absolute" target="_blank" href="https://opensea.io/collection/moongirlxyz"
                 ><img class="w-100" src="./images/Mint Button.png" alt=""
               /></a>
@@ -132,19 +135,5 @@
       let beatUrl = "./music/2a. Music for Menu Page.mp3";
     </script>
     <script src="./sound.js"></script>
-
-    <script>
-      function supportsHEVCAlpha() {
-        const navigator = window.navigator;
-        const ua = navigator.userAgent.toLowerCase();
-        const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo);
-        const isSafari = ua.indexOf("safari") != -1 && !(ua.indexOf("chrome") != -1) && ua.indexOf("version/") != -1;
-        return isSafari && hasMediaCapabilities;
-      }
-      console.log("HEVC supported : ", supportsHEVCAlpha());
-      const player = document.getElementById("player");
-      player.src = supportsHEVCAlpha() ? "./images/1.mov" : "./images/1.webm";
-      console.log("Player source : ", player.src);
-    </script>
   </body>
 </html>
