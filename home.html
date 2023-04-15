@@ -125,6 +125,7 @@
 
     <script>
       let beat;
+      let muted = false;
       let beatUrl = "./music/2a. Music for Menu Page.mp3";
     </script>
     <script src="./sound.js"></script>
@@ -137,13 +138,13 @@
         webm = "" !== player.canPlayType('video/webm; codecs="vp8, vorbis"');
         if (mov) {
           player.src = "./images/1.mov";
-          player.type = "video/mp4"
-        player.codecs  = "hvc1"
+          player.type = "video/mp4";
+          player.codecs = "hvc1";
         } else {
           if (webm) {
             player.src = "./images/1.webm";
-            player.type = "video/webm"
-        player.codecs  = "vp8, vorbis"
+            player.type = "video/webm";
+            player.codecs = "vp8, vorbis";
           } else {
             alert("browser not supported");
           }

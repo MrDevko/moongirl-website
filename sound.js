@@ -25,7 +25,8 @@ function checkSound() {
 
   beat = new Audio(beatUrl);
   beat
-    .play().then((e) => {
+    .play()
+    .then((e) => {
       console.log("SOUND IS PLAYING !!");
     })
     .catch((e) => {
@@ -62,7 +63,9 @@ function checkSound() {
 
 function turnOff() {
   try {
+    muted = true;
     beat.pause();
+   
   } catch (error) {}
 
   soundisOff();
@@ -70,6 +73,7 @@ function turnOff() {
 
 function turnOn() {
   try {
+    muted = false;
     beat = new Audio(beatUrl);
     beat.play();
     beat.addEventListener(

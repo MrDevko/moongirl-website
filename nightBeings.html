@@ -17,8 +17,6 @@
   </head>
 
   <body>
-    
-
     <a class="return" href="./home.html#menu"><img class="w-100" src="./images/Return Button.png" alt="" /></a>
     <button id="soundOFFButton" onclick="turnOn()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound Button.png " alt="" /></button>
     <button id="soundONButton" onclick="turnOff()" class="border-0 bg-transparent sound"><img class="w-100" src="./images/Sound MUTE button.png" alt="" /></button>
@@ -78,14 +76,11 @@
         </div>
       </div>
     </section>
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
-    <script>
-      // VConsole will be exported to `window.VConsole` by default.
-      var vConsole = new window.VConsole();
-    </script>
+
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <script>
       let beat;
+      let muted = false;
       let beatUrl = "./music/3a. Music for Night Beings.mp3";
     </script>
     <script src="./sound.js"></script>

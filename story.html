@@ -68,27 +68,34 @@
         </div>
       </div>
     </section>
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
-    <script>
-      // VConsole will be exported to `window.VConsole` by default.
-      var vConsole = new window.VConsole();
-    </script>
+
     <script>
       let beat;
+      let muted = false;
       let beatUrl = "./music/5a. Music for Moongirl_s Story.mp3";
     </script>
     <script src="./sound.js"></script>
     <script>
-      function supportsHEVCAlpha() {
-        const navigator = window.navigator;
-        const ua = navigator.userAgent.toLowerCase();
-        const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo);
-        const isSafari = ua.indexOf("safari") != -1 && !(ua.indexOf("chrome") != -1) && ua.indexOf("version/") != -1;
-        return isSafari && hasMediaCapabilities;
+      let player = document.getElementById("player"),
+        mov,
+        webm;
+      if (player.canPlayType) {
+        mov = "" !== player.canPlayType('video/mp4; codecs="hvc1"');
+        webm = "" !== player.canPlayType('video/webm; codecs="vp8, vorbis"');
+        if (mov) {
+          player.src = "./images/3.mov";
+          player.type = "video/mp4";
+          player.codecs = "hvc1";
+        } else {
+          if (webm) {
+            player.src = "./images/3.webm";
+            player.type = "video/webm";
+            player.codecs = "vp8, vorbis";
+          } else {
+            alert("browser not supported");
+          }
+        }
       }
-      console.log(supportsHEVCAlpha());
-      const player = document.getElementById("player");
-      player.src = supportsHEVCAlpha() ? "./images/3.mov" : "./images/3.webm";
     </script>
   </body>
 </html>

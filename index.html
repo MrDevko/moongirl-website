@@ -38,11 +38,6 @@
       </div>
     </section>
   </body>
-  <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
-  <script>
-    // VConsole will be exported to `window.VConsole` by default.
-    var vConsole = new window.VConsole();
-  </script>
   <script>
     let player = document.getElementById("player"),
       mov,
@@ -52,13 +47,13 @@
       webm = "" !== player.canPlayType('video/webm; codecs="vp8, vorbis"');
       if (mov) {
         player.src = "./images/2.mov";
-        player.type = "video/mp4"
-        player.codecs  = "hvc1"
+        player.type = "video/mp4";
+        player.codecs = "hvc1";
       } else {
         if (webm) {
           player.src = "./images/2.webm";
-          player.type = "video/webm"
-        player.codecs  = "vp8, vorbis"
+          player.type = "video/webm";
+          player.codecs = "vp8, vorbis";
         } else {
           alert("browser not supported");
         }
