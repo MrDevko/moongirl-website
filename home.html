@@ -27,10 +27,7 @@
         <div class="row justify-content-center">
           <div style="overflow-x: hidden" class="vidDiv col-12 col-md-7 col-xxl-5">
             <div class="vid position-relative">
-              <video style="width: 150%; transform: translateX(-16%)" id="player" muted loop autoplay playsinline>
-                <source src="./images/1.webm" type="video/webm;" codecs="vp8, vorbis" />
-                <source src="./images/1.mov" type="video/mp4;" codecs="hvc1" />
-              </video>
+              <video style="width: 150%; transform: translateX(-16%)" id="player" src="./images/1.webm" type="video/webm;" codecs="vp8, vorbis" muted loop autoplay playsinline></video>
               <a class="bg-transparent border-0 button2 position-absolute" target="_blank" href="https://opensea.io/collection/moongirlxyz"
                 ><img class="w-100" src="./images/Mint Button.png" alt=""
               /></a>
@@ -125,15 +122,33 @@
         </a>
       </div>
     </section>
-    <script src="https://unpkg.com/vconsole@latest/dist/vconsole.min.js"></script>
-    <script>
-      // VConsole will be exported to `window.VConsole` by default.
-      var vConsole = new window.VConsole();
-    </script>
+
     <script>
       let beat;
       let beatUrl = "./music/2a. Music for Menu Page.mp3";
     </script>
     <script src="./sound.js"></script>
+    <script>
+      let player = document.getElementById("player"),
+        mov,
+        webm;
+      if (player.canPlayType) {
+        mov = "" !== player.canPlayType('video/mp4; codecs="hvc1"');
+        webm = "" !== player.canPlayType('video/webm; codecs="vp8, vorbis"');
+        if (mov) {
+          player.src = "./images/1.mov";
+          player.type = "video/mp4"
+        player.codecs  = "hvc1"
+        } else {
+          if (webm) {
+            player.src = "./images/1.webm";
+            player.type = "video/webm"
+        player.codecs  = "vp8, vorbis"
+          } else {
+            alert("browser not supported");
+          }
+        }
+      }
+    </script>
   </body>
 </html>

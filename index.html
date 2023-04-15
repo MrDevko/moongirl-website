@@ -44,16 +44,25 @@
     var vConsole = new window.VConsole();
   </script>
   <script>
-    function supportsHEVCAlpha() {
-      const navigator = window.navigator;
-      const ua = navigator.userAgent.toLowerCase();
-      const hasMediaCapabilities = !!(navigator.mediaCapabilities && navigator.mediaCapabilities.decodingInfo);
-      const isSafari = ua.indexOf("safari") != -1 && !(ua.indexOf("chrome") != -1) && ua.indexOf("version/") != -1;
-      return isSafari && hasMediaCapabilities;
+    let player = document.getElementById("player"),
+      mov,
+      webm;
+    if (player.canPlayType) {
+      mov = "" !== player.canPlayType('video/mp4; codecs="hvc1"');
+      webm = "" !== player.canPlayType('video/webm; codecs="vp8, vorbis"');
+      if (mov) {
+        player.src = "./images/2.mov";
+        player.type = "video/mp4"
+        player.codecs  = "hvc1"
+      } else {
+        if (webm) {
+          player.src = "./images/2.webm";
+          player.type = "video/webm"
+        player.codecs  = "vp8, vorbis"
+        } else {
+          alert("browser not supported");
+        }
+      }
     }
-    console.log("HEVC supported : ", supportsHEVCAlpha());
-    const player = document.getElementById("player");
-    player.src = supportsHEVCAlpha() ? "./images/2.mov" : "./images/2.webm";
-    console.log("Player source : ", player.src);
   </script>
 </html>
