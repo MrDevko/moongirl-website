@@ -25,7 +25,7 @@ function checkSound() {
     console.log("SOUND IS MUTED !!")
     soundisOff();
   } else {
-
+    console.log("SOUND IS NOT MUTED !!")
     soundisOn();
 
     beat = new Audio(beatUrl);
