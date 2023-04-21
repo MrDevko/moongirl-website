@@ -184,6 +184,20 @@
     z-index: 10000000000;
 }
 
+.FAQQuestions{
+    width: 55%;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 25%;
+}
+
+.Answer{
+    z-index: 1000;
+    width: 100%;
+    transform: translateX(-50%);
+    left: 50%;
+}
+
 
 
 
